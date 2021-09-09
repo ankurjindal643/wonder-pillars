@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import { useEffect, useState } from "react";
+import "./App.css";
+import Country from "./country";
+let App = () => {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="main-div">
+        <h1 className="heading">Countries</h1>
+        <input
+          className="search"
+          type="text"
+          placeholder="Search for Countries"
+        />
+        <div className="country-div">
+
+          <Country />;
+        </div>
+      </div>
+    </>
   );
-}
+};
 
 export default App;
