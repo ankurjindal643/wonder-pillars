@@ -11,6 +11,7 @@
   margin-right: 2rem;
   border-radius: 2px;
   backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.4);
   height: 100vh;
   width: 100vw;
   margin-right: 10rem;
@@ -43,7 +44,7 @@
   position: relative;
   left: 8rem;
   margin-top: 10px;
-  color: whitesmoke;
+  color: #2c3e50;
 }
 
 .back-btn {
