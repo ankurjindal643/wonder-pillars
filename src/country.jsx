@@ -1,6 +1,9 @@
 import "./country.css";
 import { useEffect, useState } from "react";
+import Details from "./details";
+import { useHistory } from "react-router-dom";
 let Country = () => {
+  let history = useHistory();
   let [countryDetails, setCountryDetails] = useState([]);
   let link;
   let today = new Date(),
@@ -10,6 +13,14 @@ let Country = () => {
       (today.getMonth() + 1) +
       "/" +
       today.getFullYear();
+
+  let handleClick = (el) => {
+    history.push({
+      pathname: `/details/${el.name}`,
+      state: { data: el },
+    });
+  };
+
   useEffect(async () => {
     let resFlag = await fetch("https://restcountries.eu/rest/v2/all");
     let response = await resFlag.json();
@@ -22,7 +33,6 @@ let Country = () => {
         {
           link = `https://www.google.com/maps/?q=${el.name}`;
         }
-
         return (
           <div key={id} className="outer-div">
             <div className="flag">
@@ -34,9 +44,21 @@ let Country = () => {
               <p className="timeZone">
                 {`Current date and Time: ${date} : 6:34:19 PM`}
               </p>
-              <a href={link}>
-                <button className="countryMap">Show Map</button>
-              </a>
+              <div className="link-btn">
+                <a href={link}>
+                  <button className="countryMap">Show Map</button>
+                </a>
+                <a className="details-btn">
+                  <button
+                    onClick={() => {
+                      handleClick(el);
+                    }}
+                    className="countryMap"
+                  >
+                    Details
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         );

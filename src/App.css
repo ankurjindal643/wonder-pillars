@@ -28,4 +28,6 @@ body {
   height: fit-content;
   width: 37rem;
   left: 30rem;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
 }

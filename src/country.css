@@ -3,7 +3,6 @@
 }
 
 .outer-div {
-  /* height: 11rem; */
   height: 9rem;
   border: 1px solid;
   width: 37rem;
@@ -59,7 +58,7 @@
   background-color: white;
   text-align: center;
   height: 34px;
-  width: 20rem;
+  width: 10rem;
   border-radius: 4px;
   color: #007bff;
   margin-top: -1rem;
@@ -69,4 +68,12 @@
 .countryMap:hover {
   background-color: #007bff;
   color: white;
+}
+
+.link-btn{
+  display: flex;
+}
+
+.details-btn{
+  margin-left: 4px;
 }
